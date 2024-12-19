@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/luttinenjoni/movieassignment/issues"
   },
-  "homepage": "https://github.com/luttinenjoni/movieassignment#readme"
+  "homepage": "https://github.com/luttinenjoni/movieassignment#readme",
+  "dependencies": {
+    "pg": "^8.13.1"
+  }
 }

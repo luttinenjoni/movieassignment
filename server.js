@@ -1,4 +1,5 @@
 import express from 'express'
+import { pgPool } from './pg_connection.js'
 
 const app = express()
 
