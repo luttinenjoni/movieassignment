@@ -102,3 +102,18 @@ app.post("/genres", async(req, res) => {
         res.status(400).json({e: e.message});
     }
 })
+
+app.get("/movies/:id", async (req, res) => {
+    const movieId = req.params.id;
+
+    try {
+        //fetch movie details by ID
+        const result = await pgPool.query(
+            'SELECT movie_id, movie_name, release_year, genre_name FROM movies WHERE movie_id = $1',
+            [movieId]
+        );
+        res.status(200).json(result.rows[0]);
+    } catch (e) {
+        res.status(400).json({ e: e.message});
+    }
+});
